@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>DEVI INT UDYOG</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f6f0ea;
+    color: #35180d;
+}
+
+/* HEADER */
+header {
+    background: #35180d;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.call-btn {
+    background: #ef8625;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* HERO */
+.hero {
+    min-height: 430px;
+    padding: 80px 20px;
+    text-align: center;
+    color: white;
+
+    background:
+        linear-gradient(
+            rgba(50, 20, 10, 0.65),
+            rgba(50, 20, 10, 0.65)
+        ),
+        linear-gradient(135deg, #7d3b1c, #d16b24);
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 19px;
+    margin-bottom: 30px;
+}
+
+/* ORDER CARD */
+.order-card {
+    max-width: 600px;
+    background: white;
+    margin: -45px auto 40px;
+    position: relative;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.18);
+    text-align: center;
+}
+
+.order-card h2 {
+    margin-top: 0;
+}
+
+/* MODAL */
+.modal-background {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.70);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+    z-index: 9999;
+}
+
+.modal {
+    width: 100%;
+    max-width: 440px;
+
+    background: white;
+    padding: 30px;
+
+    border-radius: 18px;
+
+    text-align: center;
+
+    box-shadow: 0 15px 45px rgba(0,0,0,0.35);
+}
+
+.modal h2 {
+    margin-top: 0;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* YES / NO */
+.yes-btn {
+    background: #198754;
+    color: white;
+    border: none;
+
+    padding: 13px 25px;
+    border-radius: 8px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+    margin-right: 8px;
+}
+
+.no-btn {
+    background: #ddd;
+    color: #222;
+    border: none;
+
+    padding: 13px 25px;
+    border-radius: 8px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+/* FORM */
+.registration-form {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.registration-form input,
+.registration-form textarea,
+.registration-form select {
+    width: 100%;
+
+    padding: 13px;
+
+    border: 1px solid #ccc;
+    border-radius: 8px;
+
+    font-size: 15px;
+}
+
+.submit-btn {
+    background: #7b3517;
+    color: white;
+
+    border: none;
+    padding: 14px;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+/* SUCCESS */
+.success {
+    margin-top: 18px;
+
+    padding: 15px;
+
+    background: #e9f8ee;
+
+    border: 1px solid #9bd0aa;
+
+    border-radius: 10px;
+
+    color: #155724;
+}
+
+/* FOOTER */
+footer {
+    background: #35180d;
+    color: white;
+
+    text-align: center;
+
+    padding: 20px;
+
+    margin-top: 50px;
+}
+
+/* MOBILE */
+@media(max-width:600px) {
+
+    .hero h1 {
+        font-size: 31px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .logo {
+        font-size: 17px;
+    }
+
+    header {
+        padding: 13px;
+    }
+
+    .call-btn {
+        padding: 10px 13px;
+        font-size: 13px;
+    }
+}
+</style>
+</head>
+
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="logo">
+        🧱 DEVI INT UDYOG
+    </div>
+
+    <button
+        class="call-btn"
+        onclick="callOwner()">
+
+        📞 Call Owner
+
+    </button>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <h1>
+        मज़बूत घर की शुरुआत — अच्छी ईंट से!
+    </h1>
+
+    <p>
+        ईंट ऑर्डर करने के लिए Owner से बात करें
+    </p>
+
+    <button
+        class="call-btn"
+        onclick="callOwner()">
+
+        📞 ईंट ऑर्डर करने के लिए Call Now
+
+    </button>
+
+</section>
+
+
+<!-- ORDER CARD -->
+
+<div class="order-card">
+
+    <h2>
+        🧱 ईंट ऑर्डर करें
+    </h2>
+
+    <p>
+        ईंट का ऑर्डर देने के लिए पहले हमारे Owner से बात करें।
+    </p>
+
+    <button
+        class="call-btn"
+        onclick="callOwner()">
+
+        📞 Owner को Call करें
+
+    </button>
+
+</div>
+
+
+<!--
+================================================
+CALL CONFIRMATION
+================================================
+-->
+
+<div
+    id="confirmationModal"
+    class="modal-background hidden">
+
+    <div class="modal">
+
+        <h2>
+            क्या आपने ईंट ऑर्डर की है?
+        </h2>
+
+        <p>
+            अगर आपने Owner से बात करके ईंट ऑर्डर की है,
+            तो “हाँ” चुनें।
+        </p>
+
+        <br>
+
+        <button
+            class="yes-btn"
+            onclick="openRegistration()">
+
+            हाँ
+
+        </button>
+
+        <button
+            class="no-btn"
+            onclick="closeConfirmation()">
+
+            नहीं
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<!--
+================================================
+REGISTRATION FORM
+================================================
+-->
+
+<div
+    id="registrationModal"
+    class="modal-background hidden">
+
+    <div class="modal">
+
+        <h2>
+            📝 Registration Form
+        </h2>
+
+        <p>
+            ऑर्डर पूरा करने के लिए अपनी जानकारी भरें।
+        </p>
+
+
+        <form
+            class="registration-form"
+            onsubmit="submitRegistration(event)">
+
+
+            <!-- NAME -->
+
+            <input
+                type="text"
+                id="customerName"
+                placeholder="पूरा नाम"
+                required>
+
+
+            <!-- MOBILE -->
+
+            <input
+                type="tel"
+                id="customerMobile"
+                placeholder="मोबाइल नंबर"
+                maxlength="10"
+                required>
+
+
+            <!-- ADDRESS -->
+
+            <textarea
+                id="customerAddress"
+                rows="3"
+                placeholder="पूरा पता"
+                required></textarea>
+
+
+            <!-- QUANTITY -->
+
+            <input
+                type="number"
+                id="brickQuantity"
+                placeholder="ईंट की मात्रा"
+                min="1"
+                required>
+
+
+            <!-- SUBMIT -->
+
+            <button
+                type="submit"
+                class="submit-btn">
+
+                Registration करें
+
+            </button>
+
+
+            <!-- CANCEL -->
+
+            <button
+                type="button"
+                class="no-btn"
+                onclick="closeRegistration()">
+
+                Cancel
+
+            </button>
+
+        </form>
+
+
+        <!-- SUCCESS -->
+
+        <div
+            id="successMessage"
+            class="success hidden">
+        </div>
+
+    </div>
+
+</
